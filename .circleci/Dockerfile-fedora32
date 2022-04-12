@@ -27,17 +27,31 @@ RUN dnf install -y \
       xz-devel \
       libffi-devel \
       wget \
+  && git clone https://github.com/python/cpython.git \
+  && cd cpython \
+  && git checkout v3.9.0 \
+  && ./configure \
+  && make \
+  && make install \
+  && cd .. \
+  && rm -rf cpython \
+  && dnf install -y \
+     @development-tools \
+     findutils \
+     zlib-devel \
+     bzip2-devel \
+     ncurses-devel \
+     gdbm-devel \
+     openssl-devel \
+     sqlite-devel \
+     tk-devel \
+     libuuid-devel \
+     readline-devel \
+     libnsl2-devel \
+     xz-devel \
+     libffi-devel \
+     wget \
   && dnf clean all && rm -rf /var/cache/dnf/*
-
-# Python 3.9
-RUN git clone https://github.com/python/cpython.git \
- && cd cpython \
- && git checkout v3.9.0 \
- && ./configure \
- && make \
- && make install \
- && cd .. \
- && rm -rf cpython
 
 # Other packages required for tests
 RUN dnf install -y \

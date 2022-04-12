@@ -27,17 +27,15 @@ RUN dnf install -y \
       xz-devel \
       libffi-devel \
       wget \
+  && git clone https://github.com/python/cpython.git \
+  && cd cpython \
+  && git checkout v3.10.0 \
+  && ./configure \
+  && make \
+  && make install \
+  && cd .. \
+  && rm -rf cpython \
   && dnf clean all && rm -rf /var/cache/dnf/*
-
-# Python 3.10
-RUN git clone https://github.com/python/cpython.git \
- && cd cpython \
- && git checkout v3.10.0 \
- && ./configure \
- && make \
- && make install \
- && cd .. \
- && rm -rf cpython
 
 # Other packages required for tests
 RUN dnf install -y \
