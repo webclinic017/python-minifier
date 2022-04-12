@@ -9,7 +9,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     container:
-      image: danielflook/python-minifier-build:python3.10-2022-04-11
+      image: danielflook/python-minifier-build:python3.10-2022-04-12
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -52,7 +52,7 @@ jobs:
       matrix:
         python: ["2.7", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10"]
     container:
-      image: danielflook/python-minifier-build:python${{ matrix.python }}-2022-04-11
+      image: danielflook/python-minifier-build:python${{ matrix.python }}-2022-04-12
     steps:
       - name: Test
         run: |

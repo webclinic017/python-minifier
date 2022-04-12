@@ -32,5 +32,5 @@ docker push danielflook/python-minifier-build:python3.7-$DATE
 docker push danielflook/python-minifier-build:python3.8-$DATE
 docker push danielflook/python-minifier-build:python3.9-$DATE
 docker push danielflook/python-minifier-build:python3.10-$DATE
-docker push danielflook/python-minifier-build:pyp-$DATE
+docker push danielflook/python-minifier-build:pypy-$DATE
 docker push danielflook/python-minifier-build:pypy3-$DATE
