@@ -19,7 +19,7 @@ jobs:
 
       - name: Test
         run: |
-          pip install setuptools_scm
+          pip3 install setuptools_scm
           VERSION=$(python3 setup.py --version)
           sed -i "s/setup_requires=.*/version='$VERSION',/; s/use_scm_version=.*//" setup.py
 
