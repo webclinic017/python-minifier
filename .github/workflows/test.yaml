@@ -23,4 +23,4 @@ jobs:
           VERSION=$(python3 setup.py --version)
           sed -i "s/setup_requires=.*/version='$VERSION',/; s/use_scm_version=.*//" setup.py
 
-          tox -r -e $("${{ matrix.python }}" | tr -d .)
+          tox -r -e $(echo "${{ matrix.python }}" | tr -d .)
