@@ -19,6 +19,7 @@ jobs:
 
       - name: Test
         run: |
+          ls -la
           git tag
           VERSION=$(python3 setup.py --version)
           sed -i "s/setup_requires=.*/version='$VERSION',/; s/use_scm_version=.*//" setup.py
